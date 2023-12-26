@@ -13,7 +13,7 @@
     "@tremor/react": "^3.12.1",
     "@types/pdf-parse": "^1.1.4",
     "next": "14.0.4",
-    "pdf-parse": "^1.1.1",
+    "pdf-parse": "giovannecorrea/pdf-parse#feature/my-changes",
     "react": "^18",
     "react-dom": "^18"
   },
