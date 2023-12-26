@@ -5,8 +5,6 @@ import { MesNumero } from '@/utils';
 
 const prisma = new PrismaClient()
 
-
-
 function trataValor(valor: string) {
   return valor.replace('.', '').replace(',', '.');    // Trata um possível separador de milhares e converte o separador decimal para ponto
 }
