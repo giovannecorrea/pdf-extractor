@@ -4,8 +4,8 @@
 
 1. Clone do repositório e instalação das dependências
 ```bash
-git clone https://github.com/giovannecorrea/desafio-lumi.git
-cd desafio-lumi
+git clone https://github.com/giovannecorrea/pdf-extractor.git
+cd pdf-extractor
 npm install
 ```
 
@@ -23,5 +23,3 @@ npx prisma db push
 ```bash
 npm run dev
 ```
-
-test
