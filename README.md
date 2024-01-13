@@ -12,7 +12,7 @@ cd pdf-extractor
 npm install
 ```
 
-2. Criar arquivo .env no root com a URL do banco PostgreSQL
+2. Criar arquivo .env no root com a URL do banco PostgreSQL (Necessário ter servidor PostgreSQL configurado e rodando)
 ```bash
 DATABASE_URL="postgresql://johndoe:randompassword@localhost:5432/mydb?schema=public"
 ```
@@ -43,7 +43,7 @@ cd pdf-extractor
 npm install
 ```
 
-2. Create a .env file in the root with the URL of the PostgreSQL database
+2. Create a .env file in the root with the URL of the PostgreSQL database (You must have a PostgreSQL server configured and running)
 ```bash
 DATABASE_URL="postgresql://johndoe:randompassword@localhost:5432/mydb?schema=public"
 ```

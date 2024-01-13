@@ -35,6 +35,9 @@ const Dashboard: React.FC = () => {
           body: JSON.stringify({ nr_cliente: selecaoCliente }),
         });
         const faturasJson = await response.json();
+        if (!response.ok) {
+          throw new Error(faturasJson.msg);
+        }
 
         const mapFatura = (fatura: Fatura, type: string) => {
           return {

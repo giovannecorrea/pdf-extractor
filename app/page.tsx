@@ -5,6 +5,7 @@ import { Title, Card, Button } from "@tremor/react";
 
 const Home: React.FC = () => {
   const [pdfFile, setPdfFile] = useState<File | undefined>();
+  const [loading, setLoading] = useState(false);
 
   const handleUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
     const selectedFile = e.target.files?.[0];
@@ -31,6 +32,8 @@ const Home: React.FC = () => {
       return;
     }
 
+    setLoading(true);
+
     const formData = new FormData();
     formData.append("pdfFile", pdfFile);
 
@@ -54,6 +57,7 @@ const Home: React.FC = () => {
       alert("Ocorreu um erro ao salvar a fatura. Por favor, tente novamente mais tarde.");
       console.error('Error:', error);
     } finally {
+      setLoading(false);
       setPdfFile(undefined);
       const fileInput = document.getElementById("pdfFile") as HTMLInputElement;
       if (fileInput) {
@@ -68,7 +72,9 @@ const Home: React.FC = () => {
       <Card className="mt-4">
         <form className="space-y-10 text-center" onSubmit={handleSubmit}>
           <p><input type="file" id="pdfFile" onChange={handleUpload} /></p>
-          <Button type="submit">Enviar</Button>
+          <Button type="submit" loading={loading} loadingText="Processando...">
+            Enviar
+          </Button>
         </form>
       </Card>
     </main>

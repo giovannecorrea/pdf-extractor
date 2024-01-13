@@ -44,7 +44,11 @@ const BibliotecaFaturas: React.FC = () => {
           method: 'POST',
           body: JSON.stringify({ nr_cliente: selecaoCliente }),
         });
+        
         const faturasJson = await response.json();
+        if (!response.ok) {
+          throw new Error(faturasJson.msg);
+        }
         setFaturas(faturasJson);
       } catch (error) {
         console.error('Error fetching faturas:', error);
